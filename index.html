@@ -251,6 +251,23 @@
     <p>* ARE YOU THERE?<br>* . . .<br>* DEVICE_KNIGHT IS NOT CONNECTED.</p>
   </div>
 
+  <script>
+    // iOS Safari ignores user-scalable=no and only partly honours touch-action: none,
+    // so mashing Z/X (double-tap) or holding the d-pad while tapping a button (pinch)
+    // still zooms the page. Cancel those gestures by hand; pointer events still fire.
+    (() => {
+      const opts = { passive: false };
+      const native = (t) => t instanceof Element && t.closest('a, button, input, select, textarea');
+      const cancel = (ev) => { if (!native(ev.target)) ev.preventDefault(); };
+      for (const type of ['gesturestart', 'gesturechange', 'gestureend']) {
+        document.addEventListener(type, (ev) => ev.preventDefault(), opts);
+      }
+      document.addEventListener('touchmove', cancel, opts);
+      document.addEventListener('touchend', cancel, opts);
+      document.addEventListener('dblclick', cancel, opts);
+    })();
+  </script>
+
   <script type="module">
 
     try { localStorage.removeItem('thedevice.mute'); } catch {}
