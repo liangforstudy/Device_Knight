@@ -1,6 +1,6 @@
 # DEVICE_KNIGHT (fork)
 
-A fork of [DEVICE_KNIGHT](https://shadowcrystal.dev/DEVICE_KNIGHT/) by <!-- TODO: upstream author --> that fixes the page zooming in on iOS Safari during play.
+A fork of [DEVICE_KNIGHT](https://shadowcrystal.dev/DEVICE_KNIGHT/) that fixes the page zooming in on iOS Safari during play.
 
 - **Upstream:** https://shadowcrystal.dev/DEVICE_KNIGHT/ (v1.0.70)
 - **This fork:** v1.0.71 · <!-- TODO: fork URL -->
